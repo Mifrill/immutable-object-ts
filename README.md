@@ -18,3 +18,30 @@ instance[property] = 'lala'; // This sets the property for the first time.
 instance[property] = 'another'; // This will throw an error.
 instance[property] = null; // This will throw an error.
 ```
+
+<hr>
+
+```ts
+const user = {
+  name: 'Alex',
+  age: 33
+}
+
+// 1
+Object.isExtensible(user)
+Object.preventExtensions(user)
+user.skills = ['code']
+console.log(user.skills)
+
+// 2
+Object.isSealed(user)
+Object.seal(user)
+delete user.name
+console.log(user.name)
+
+// 3
+Object.isFrozen(user)
+Object.freeze(user)
+user.name = 'Robert'
+console.log(user.name)
+```
